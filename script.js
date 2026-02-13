@@ -21,7 +21,7 @@ yesBtn.style.transition = "transform 0.3s ease";
 
 // NO text sequence
 const noTexts = [
-  "Pwede bati nata?🥺🥺🥺",
+  "Pero pwede bati nata?🥺🥺🥺",
   "Pleasee pooo🥺",
   "Cgeee naaaa🥺🥺",
   "Wawa man meee😔😔😔",
@@ -77,10 +77,11 @@ noBtn.addEventListener("click", () => {
 
 // YES button logic
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yippeeee!";
+    title.textContent = "Yeeeyyy🥳🥳🥳!";
     catImg.src = "Kiss.gif";
 
     valentineText.style.display = "none";
     buttons.style.display = "none";
-    finalText.style.display = "block";
+
+    finalText.style.display = "flex";
 });

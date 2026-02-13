@@ -65,7 +65,7 @@ body {
   margin: 0;
   position: relative;
   z-index: 10;
-  color: red; /* visible */
+  color: rgb(0, 0, 0); /* visible */
 }
 
 /* Cat / changing image */
@@ -111,15 +111,39 @@ body {
 
 /* Ending text */
 .final-text {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 4vw;
-  line-height: 1.4;
+  line-height: 1.6;
   text-align: center;
   padding: 2vw;
   background-color: rgba(255,240,240,0.5);
   border-radius: 12px;
-  z-index: 10;
+  gap: 1.5vh;
 }
+
+/* Top line centered */
+.center-line {
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+/* Container for the two React lines */
+.react-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Individual React item */
+.react-item {
+  font-weight: bold;
+  flex: 1; /* take equal space */
+  text-align: center;
+}
+
 
 /* Mobile specific tweaks */
 @media screen and (max-width: 500px) {
