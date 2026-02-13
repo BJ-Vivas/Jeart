@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("Background.jpg");
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+/* Envelope screen */
+#envelope-container {
+  text-align: center;
+  cursor: pointer;
+}
+#envelope {
+  width: 200px;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Letter screen */
+#letter-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-window {
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 3/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("Window.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  padding-top: 150px;
+  gap: 10px;
+  transform: scale(1.2);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.letter-window.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Titles */
+#letter-title {
+  font-size: 30px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  color: rgb(0, 0, 0); /* test visibility */
+}
+
+/* Cat / changing image */
+.cat {
+  width: 350px;
+  transition: width 0.4s ease;
+}
+
+/* Valentine text */
+#valentine-text {
+  display: none;
+  font-size: 22px;
+  margin: 10px 0;
+  z-index: 10;
+}
+
+/* Buttons */
+.buttons {
+  display: none;
+  justify-content: center;
+  gap: 50px;
+  z-index: 10;
+}
+.btn {
+  width: 150px;
+  cursor: pointer;
+  user-select: none;
+}
+.clickhere {
+  width: 200px;
+  z-index: 10;
+}
+.yes-btn {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.no-btn {
+  transition: transform 0.3s ease;
+}
+
+/* Ending text */
+.final-text {
+  display: none;
+  font-size: 22px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: rgba(255,240,240,0.5);
+  border-radius: 12px;
+  z-index: 10;
+}
