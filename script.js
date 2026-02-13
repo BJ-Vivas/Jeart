@@ -14,7 +14,10 @@ const finalText = document.getElementById("final-text");
 const images = ["First.gif","Second.gif","Third.gif","Fourth.gif","Fifth.gif", "Sixth.gif", "Seventh.gif", "Eighth.gif", "Ninth.gif", "Tenth.gif", "Eleventh.png"];
 let imgIndex = -1;
 let noClickCount = 0;
+
 let yesScale = 1;
+yesBtn.style.transformOrigin = "center";
+yesBtn.style.transition = "transform 0.3s ease";
 
 // NO text sequence
 const noTexts = [
@@ -63,16 +66,18 @@ noBtn.addEventListener("click", () => {
         valentineText.textContent = noTexts[noClickCount - 1];
     }
 
-    // YES button grows after 5 NO clicks
+    // YES button grows after 5 NO clicks (scaled to viewport width)
     if (noClickCount >= 6) {
-        yesScale += 0.5;
+        // scale grows by 20% of viewport width for mobile proportionality
+        const scaleFactor = window.innerWidth / 800; // base 800px
+        yesScale += 0.5 * scaleFactor;
         yesBtn.style.transform = `scale(${yesScale})`;
     }
 });
 
 // YES button logic
 yesBtn.addEventListener("click", () => {
-    title.textContent = "Yeeeyyyy🥳🥳🥳";
+    title.textContent = "Yippeeee!";
     catImg.src = "Kiss.gif";
 
     valentineText.style.display = "none";

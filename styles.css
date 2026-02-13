@@ -5,6 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url("Background.jpg");
+  background-size: cover;
   font-family: "Pixelify Sans", sans-serif;
 }
 
@@ -14,7 +15,8 @@ body {
   cursor: pointer;
 }
 #envelope {
-  width: 200px;
+  width: 30vw; /* responsive */
+  max-width: 200px;
   animation: pulse 1.5s infinite;
 }
 @keyframes pulse {
@@ -46,8 +48,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 12px;
-  padding-top: 150px;
-  gap: 10px;
+  padding-top: 20%;
+  gap: 1vh;
   transform: scale(1.2);
   opacity: 0;
   transition: transform 0.6s ease, opacity 0.6s ease;
@@ -59,24 +61,25 @@ body {
 
 /* Titles */
 #letter-title {
-  font-size: 30px;
+  font-size: 6vw; /* scales with viewport */
   margin: 0;
   position: relative;
   z-index: 10;
-  color: rgb(0, 0, 0); /* test visibility */
+  color: red; /* visible */
 }
 
 /* Cat / changing image */
 .cat {
-  width: 350px;
+  width: 50vw; /* scales */
+  max-width: 350px;
   transition: width 0.4s ease;
 }
 
 /* Valentine text */
 #valentine-text {
   display: none;
-  font-size: 22px;
-  margin: 10px 0;
+  font-size: 4vw;
+  margin: 2vh 0;
   z-index: 10;
 }
 
@@ -84,16 +87,18 @@ body {
 .buttons {
   display: none;
   justify-content: center;
-  gap: 50px;
+  gap: 5vw; /* responsive spacing */
   z-index: 10;
 }
 .btn {
-  width: 150px;
+  width: 25vw;
+  max-width: 150px;
   cursor: pointer;
   user-select: none;
 }
 .clickhere {
-  width: 200px;
+  width: 40vw;
+  max-width: 200px;
   z-index: 10;
 }
 .yes-btn {
@@ -107,11 +112,21 @@ body {
 /* Ending text */
 .final-text {
   display: none;
-  font-size: 22px;
+  font-size: 4vw;
   line-height: 1.4;
   text-align: center;
-  padding: 10px 20px;
+  padding: 2vw;
   background-color: rgba(255,240,240,0.5);
   border-radius: 12px;
   z-index: 10;
+}
+
+/* Mobile specific tweaks */
+@media screen and (max-width: 500px) {
+  #letter-title { font-size: 8vw; }
+  #valentine-text, .final-text { font-size: 5vw; }
+  .cat { width: 70vw; max-width: 300px; }
+  .btn { width: 35vw; max-width: 120px; }
+  .clickhere { width: 60vw; max-width: 150px; }
+  .buttons { gap: 8vw; }
 }
